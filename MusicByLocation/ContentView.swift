@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var locationHandler = LocationHandler()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Form {
+            Text("Street: \(locationHandler.lastKnownLocation.street)")
+            Text("City: \(locationHandler.lastKnownLocation.city)")
+            Text("Country: \(locationHandler.lastKnownLocation.country)")
+            Text("Post Code: \(locationHandler.lastKnownLocation.postCode)")
+            Button("Find Music", action: {
+                locationHandler.requestLocation()
+            })
+        }.onAppear(perform: {
+            locationHandler.requestAuthorisation()
+        })
     }
 }
 
