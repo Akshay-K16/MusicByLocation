@@ -8,14 +8,15 @@
 import Foundation
 
 class StateController: ObservableObject {
+    let locationHandler = LocationHandler()
+    let itunesAdaptor = ITunesAdaptor()
+    @Published var artists: [Artist] = []
     var lastKnownLocation : String = "" {
         didSet {
-            getArtists(lastKnownLocation)
+            itunesAdaptor.getArtists(lastKnownLocation, completion: updateArtists)
         }
     }
-    @Published var artistNames: String = ""
-    let locationHandler = LocationHandler()
-    
+
     func findMusic() {
         locationHandler.requestLocation()
     }
@@ -25,38 +26,12 @@ class StateController: ObservableObject {
         locationHandler.requestAuthorisation()
     }
     
-    func getArtists(_ toSearch: String) {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=\(toSearch)&entity=musicArtist")
-        else {
-            print("Invalid URL")
-            return
+    func updateArtists(x: [Artist]?) {
+        if let test = x {
+            print(test[0].url)
         }
-        
-        let request = URLRequest(url: url)
-        
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let data = data  {
-                if let response = self.parseJson(json: data) {
-                    let names = response.results.map {
-                        return $0.name
-                    }
-                    
-                    DispatchQueue.main.async {
-                        self.artistNames = names.joined(separator: ", ")
-                    }
-                }
-            }
-        }.resume()
-    }
-    
-    func parseJson(json: Data) -> ArtistResponse? {
-        let decoder = JSONDecoder()
-        
-        if let artistResponse = try? decoder.decode(ArtistResponse.self, from: json) {
-            return artistResponse
-        } else {
-            print("Error Decoding JSON")
-            return nil
-        }   
+        DispatchQueue.main.async {
+            self.artists = x ?? [Artist(name: "No Artists Found", url: "https://www.google.co.uk/")]
+        }
     }
 }

@@ -14,6 +14,7 @@
 		381A2585264DAF5C00BBB7C7 /* MusicByLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A2584264DAF5C00BBB7C7 /* MusicByLocationTests.swift */; };
 		381A2590264DAF5C00BBB7C7 /* MusicByLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A258F264DAF5C00BBB7C7 /* MusicByLocationUITests.swift */; };
 		381A25A1264DB0A100BBB7C7 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A25A0264DB0A100BBB7C7 /* LocationHandler.swift */; };
+		3885901A26569A2500410850 /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3885901926569A2500410850 /* ITunesAdaptor.swift */; };
 		38EF91DD2652F72C00BCC369 /* CLPlacemark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EF91DC2652F72C00BCC369 /* CLPlacemark.swift */; };
 		38EF91EB2652F8D700BCC369 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EF91EA2652F8D700BCC369 /* StateController.swift */; };
 		38EF91F42653026F00BCC369 /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EF91F32653026F00BCC369 /* ArtistResponse.swift */; };
@@ -51,6 +52,7 @@
 		381A258F264DAF5C00BBB7C7 /* MusicByLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicByLocationUITests.swift; sourceTree = "<group>"; };
 		381A2591264DAF5C00BBB7C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		381A25A0264DB0A100BBB7C7 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		3885901926569A2500410850 /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
 		38EF91DC2652F72C00BCC369 /* CLPlacemark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLPlacemark.swift; sourceTree = "<group>"; };
 		38EF91EA2652F8D700BCC369 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		38EF91F32653026F00BCC369 /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				381A2578264DAF5B00BBB7C7 /* Preview Content */,
 				381A25A0264DB0A100BBB7C7 /* LocationHandler.swift */,
 				38EF91EA2652F8D700BCC369 /* StateController.swift */,
+				3885901926569A2500410850 /* ITunesAdaptor.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				38EF91EB2652F8D700BCC369 /* StateController.swift in Sources */,
 				38EF91F42653026F00BCC369 /* ArtistResponse.swift in Sources */,
 				38EF91FC265302BB00BCC369 /* Artist.swift in Sources */,
+				3885901A26569A2500410850 /* ITunesAdaptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

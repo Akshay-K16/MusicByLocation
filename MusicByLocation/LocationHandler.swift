@@ -33,8 +33,7 @@ class LocationHandler: NSObject, CLLocationManagerDelegate {
                     self.stateController?.lastKnownLocation = "Error"
                 } else {
                     if let firstPlacemark = placemarks?[0] {
-                        let locationDetails = firstPlacemark.getLocationDetails()
-                        self.stateController?.lastKnownLocation = locationDetails[1]
+                        self.stateController?.lastKnownLocation = firstPlacemark.locality ?? "Error Finding Locality"
                     }
                 }
             })

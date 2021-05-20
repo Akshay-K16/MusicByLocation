@@ -13,7 +13,10 @@ struct ContentView: View {
     var body: some View {
         Form {
             Text("City: \(state.lastKnownLocation)")
-            Text(state.artistNames)
+            List(state.artists, id: \.self) {
+                item in
+                Link("\(item.name)", destination: URL(string: "\(item.url)")!)
+            }
             Button("Find Music", action: {
                 state.findMusic()
             })
